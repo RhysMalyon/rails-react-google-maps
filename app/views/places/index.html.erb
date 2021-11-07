@@ -4,7 +4,9 @@
   markers: [@markers]
 }) %>
 
-<% @places.each do |place| %>
-  <h2><%= place.name %></h2>
-  <p><%= place.address %></p>
-<% end %>
+<div class="container-places">
+  <% @places.each do |place| %>
+    <h2><%= place.name %></h2>
+    <p><%= place.address %></p>
+  <% end %>
+</div>
