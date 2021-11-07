@@ -1,17 +1,21 @@
 import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow,
+} from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100vw',
   height: '50vh'
 };
 
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
-
 const Map = (props) => {
+  const center = {
+    lat: props.center[0],
+    lng: props.center[1]
+  };
+
   return (
     <GoogleMap
       mapContainerStyle={containerStyle}
