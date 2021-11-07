@@ -1,24 +1,53 @@
-# README
+# How to integrate Google Maps into your Rails project: the React way
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Background
 
-Things you may want to cover:
+This is the source code for the Rails and React tutorial series on dev.to. The 4-part article series explores implementing Google Maps using the [react google maps api](https://www.npmjs.com/package/@react-google-maps/api) package together with the [geocoder](https://github.com/alexreisner/geocoder) gem for geocoding and pulling coordinates from addresses.
 
-* Ruby version
+The process runs from starting up a Rails app through to installing Rails React, setting up Google Maps API keys and APIs, and finally bringing it all together to create a Map component.
 
-* System dependencies
+## Setup
 
-* Configuration
+If cloning from this directory, ensure that you have the prerequisites from the [Building our rails backbone](https://dev.to/rhysmalyon/implementing-google-maps-in-your-rails-project-with-react-2kgb). After doing so, you can run these commands in your terminal:
 
-* Database creation
+```
+bundle install
+npm install / yarn add
+```
 
-* Database initialization
+Next, set up your database:
 
-* How to run the test suite
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running the project
 
-* Deployment instructions
+In your terminal:
 
-* ...
+```
+rails server
+```
+
+## Adding more places
+
+There are multiple ways to do this. Before you attempt to do so, ensure that you have set up the following in your .env file:
+
+```
+GMAPS_SERVER_KEY=your_key_here
+GMAPS_BROWSER_KEY=your_key_here
+```
+
+For more details, check out [Setting up Google Maps API](https://dev.to/rhysmalyon/adding-a-map-to-our-app-9ok).
+
+The simplest way to create a new place instance is to run `rails console` and manually add them with the following command:
+
+```
+Place.create!(name: "ENTER_NAME_HERE", address: "ENTER_ADDRESS_HERE")
+```
+
+If the address is valid it should automatically assign latitude and longitude to your new place. You can confirm by either checking in the console or on your map as only valid markers will be displayed.
+
+If you want to expand project features you can add form inputs like [simple form](https://github.com/heartcombo/simple_form) that can help you easily add new places. This would be especially useful if you plan to allow others to add places to your map.
