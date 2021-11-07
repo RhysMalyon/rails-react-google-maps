@@ -1,1 +1,6 @@
 <%= react_component("Map", {}) %>
+
+<% @places.each do |place| %>
+  <h2><%= place.name %></h2>
+  <p><%= place.address %></p>
+<% end %>
