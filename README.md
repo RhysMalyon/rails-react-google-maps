@@ -2,6 +2,11 @@
 
 ## Background
 
+1. [Building our Rails backbone](https://dev.to/rhysmalyon/building-our-rails-backbone-2jmb)
+2. [Installing React and creating our first component](https://dev.to/rhysmalyon/installing-react-and-creating-our-first-component-1e1c)
+3. [Setting up Google Maps API](https://dev.to/rhysmalyon/setting-up-google-maps-api-1ji6)
+4. [Creating our Google Map component](https://dev.to/rhysmalyon/creating-our-google-map-component-4h88)
+
 This is the source code for the Rails and React tutorial series on dev.to. The 4-part article series explores implementing Google Maps using the [react google maps api](https://www.npmjs.com/package/@react-google-maps/api) package together with the [geocoder](https://github.com/alexreisner/geocoder) gem for geocoding and pulling coordinates from addresses.
 
 The process runs from starting up a Rails app through to installing Rails React, setting up Google Maps API keys and APIs, and finally bringing it all together to create a Map component.
